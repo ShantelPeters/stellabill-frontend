@@ -1,3 +1,5 @@
+import RevenueChart from '../components/RevenueChart';
+
 export default function Dashboard() {
   return (
     <div>
@@ -10,6 +12,7 @@ export default function Dashboard() {
         <Card title="MRR" value="—" />
         <Card title="Pending Charges" value="—" />
       </div>
+      <RevenueChart />
     </div>
   )
 }
