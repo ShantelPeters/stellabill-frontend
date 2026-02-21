@@ -1,13 +1,61 @@
+import SubscriptionCard, { SubscriptionData } from '../components/SubscriptionCard';
+
+// Mock data - replace with API call
+const mockSubscriptions: SubscriptionData[] = [
+  {
+    id: 'SUB-001',
+    planName: 'Premium Access',
+    merchant: 'Stellar News',
+    status: 'active',
+    price: 10,
+    currency: 'USDC',
+    interval: 'month',
+    prepaidBalance: 30,
+    coverage: 3,
+    nextChargeDate: 'Mar 15, 2026',
+    icon: '📰'
+  },
+  {
+    id: 'SUB-002',
+    planName: 'Pro Plan',
+    merchant: 'CloudFlow',
+    status: 'active',
+    price: 25,
+    currency: 'USDC',
+    interval: 'month',
+    prepaidBalance: 75,
+    coverage: 3,
+    nextChargeDate: 'Mar 20, 2026',
+    icon: '☁️'
+  }
+];
+
 export default function Subscriptions() {
+  const subscriptions = mockSubscriptions;
+  const isLoading = false;
+
   return (
     <div>
-      <h1 style={{ margin: '0 0 1rem', fontSize: '1.5rem' }}>Subscriptions</h1>
-      <p style={{ color: '#64748b', marginBottom: '1.5rem' }}>
-        List and manage customer subscriptions. Data will come from the Stellarbill backend.
+      <h1 style={{ margin: '0 0 0.5rem', fontSize: '1.5rem', color: '#ffffff' }}>My Subscriptions</h1>
+      <p style={{ color: '#9ca3af', marginBottom: '1.5rem' }}>
+        Manage your active subscriptions and view payment details.
       </p>
-      <div style={{ background: '#fff', borderRadius: 8, boxShadow: '0 1px 3px rgba(0,0,0,0.08)', padding: '1.5rem' }}>
-        <p style={{ color: '#94a3b8', margin: 0 }}>No subscriptions yet. Integrate API to load list.</p>
-      </div>
+
+      {isLoading ? (
+        <div className="subscriptions-loading">
+          <div className="loading-spinner" role="status" aria-label="Loading subscriptions" />
+        </div>
+      ) : subscriptions.length === 0 ? (
+        <div className="subscriptions-empty">
+          <p>No subscriptions yet. Subscribe to a plan to get started.</p>
+        </div>
+      ) : (
+        <div className="subscriptions-grid">
+          {subscriptions.map((subscription) => (
+            <SubscriptionCard key={subscription.id} subscription={subscription} />
+          ))}
+        </div>
+      )}
     </div>
-  )
+  );
 }
