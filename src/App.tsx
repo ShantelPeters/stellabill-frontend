@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import Subscriptions from './pages/Subscriptions'
+import SubscriptionDetail from './pages/SubscriptionDetail'
 import Plans from './pages/Plans'
 import Landing from './pages/Landing'
 
@@ -11,6 +12,7 @@ function App() {
       <Route path="/" element={<Landing />} />
       <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
       <Route path="/subscriptions" element={<Layout><Subscriptions /></Layout>} />
+      <Route path="/subscriptions/:id" element={<Layout><SubscriptionDetail /></Layout>} />
       <Route path="/plans" element={<Layout><Plans /></Layout>} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
