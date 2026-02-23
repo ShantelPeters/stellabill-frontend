@@ -5,20 +5,24 @@ import Subscriptions from './pages/Subscriptions'
 import SubscriptionDetail from './pages/SubscriptionDetail'
 import Plans from './pages/Plans'
 import UIMockups from './pages/UIMockups'
-import Landing from './pages/Landing'
+import LandingPage from './pages/LandingPage'
 import OnboardingSuccess from './pages/OnboardingSuccess'
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/onboarding-success" element={<OnboardingSuccess />} />
-      <Route path="/dashboard" element={<Layout><Dashboard /></Layout>} />
-      <Route path="/subscriptions" element={<Layout><Subscriptions /></Layout>} />
-      <Route path="/subscriptions/:id" element={<Layout><SubscriptionDetail /></Layout>} />
-      <Route path="/plans" element={<Layout><Plans /></Layout>} />
-      <Route path="/ui-kit" element={<UIMockups />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path='/' element={<LandingPage />} />
+      <Route path='/onboarding-success' element={<OnboardingSuccess />} />
+
+      <Route element={<Layout />}>
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/subscriptions' element={<Subscriptions />} />
+        <Route path='/subscriptions/:id' element={<SubscriptionDetail />} />
+        <Route path='/plans' element={<Plans />} />
+        <Route path='/ui-kit' element={<UIMockups />} />
+      </Route>
+
+      <Route path='*' element={<Navigate to='/' replace />} />
     </Routes>
   )
 }
