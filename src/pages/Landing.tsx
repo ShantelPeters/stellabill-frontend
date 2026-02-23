@@ -2,6 +2,8 @@ import PricingCard from '@/components/PricingCard'
 import LandingNavbar from '../components/LandingNavbar'
 import { useEffect, useState } from 'react'
 import Hero from '../components/Landing/Hero'
+import TechBadges from "../components/landing/TechBadges";
+import SubscriptionActions from "@/components/SubscriptionActions";
 
 export default function Landing() {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
@@ -28,17 +30,31 @@ export default function Landing() {
   }
 
   return (
-    <div style={{ background: '#020b0d', minHeight: '100vh' }}>
+    <div style={{ background: "#020b0d", minHeight: "100vh" }}>
       <LandingNavbar />
-      
+
       <main>
         <Hero />
+        <TechBadges />
 
         {/* Sections for anchor links */}
-        <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
-          <section id="product" style={{ padding: '6rem 0', minHeight: '400px' }}>
-            <h2 style={{ color: '#ffffff', fontSize: '2rem', marginBottom: '1rem' }}>Product</h2>
-            <p style={{ color: '#94a3b8' }}>Product information goes here...</p>
+        <div
+          style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 1.5rem" }}
+        >
+          <section
+            id="product"
+            style={{ padding: "6rem 0", minHeight: "400px" }}
+          >
+            <h2
+              style={{
+                color: "#ffffff",
+                fontSize: "2rem",
+                marginBottom: "1rem",
+              }}
+            >
+              Product
+            </h2>
+            <p style={{ color: "#94a3b8" }}>Product information goes here...</p>
           </section>
 
         <section id="pricing" style={{ padding: '6rem 0', minHeight: '400px' }}>
@@ -113,17 +129,36 @@ export default function Landing() {
           </div>
         </section>
 
-          <section id="docs" style={{ padding: '6rem 0', minHeight: '400px' }}>
-            <h2 style={{ color: '#ffffff', fontSize: '2rem', marginBottom: '1rem' }}>Documentation</h2>
-            <p style={{ color: '#94a3b8' }}>Documentation goes here...</p>
+          <section id="docs" style={{ padding: "6rem 0", minHeight: "400px" }}>
+            <h2
+              style={{
+                color: "#ffffff",
+                fontSize: "2rem",
+                marginBottom: "1rem",
+              }}
+            >
+              Documentation
+            </h2>
+            <p style={{ color: "#94a3b8" }}>Documentation goes here...</p>
           </section>
 
-          <section id="contact" style={{ padding: '6rem 0', minHeight: '400px' }}>
-            <h2 style={{ color: '#ffffff', fontSize: '2rem', marginBottom: '1rem' }}>Contact</h2>
-            <p style={{ color: '#94a3b8' }}>Contact information goes here...</p>
+          <section
+            id="contact"
+            style={{ padding: "6rem 0", minHeight: "400px" }}
+          >
+            <h2
+              style={{
+                color: "#ffffff",
+                fontSize: "2rem",
+                marginBottom: "1rem",
+              }}
+            >
+              Contact
+            </h2>
+            <p style={{ color: "#94a3b8" }}>Contact information goes here...</p>
           </section>
         </div>
       </main>
     </div>
-  )
+  );
 }
