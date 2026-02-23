@@ -1,26 +1,6 @@
-import {useState, useEffect}  from "react";
-import LandingNavbar from '../components/LandingNavbar';
-
+import LandingNavbar from '../components/LandingNavbar'
 
 export default function Landing() {
-  const MOCK_ITEMS = [
-  { id: "1", type: "new_subscription",      details: "Plan Pro — Customer GABC...XYZ9",      timestamp: "2 minutes ago",  amount: "10 USDC" },
-  { id: "2", type: "charge_succeeded",      details: "Customer GDEF...ABC3 — Monthly payment", timestamp: "15 minutes ago", amount: "10 USDC" },
-  { id: "3", type: "new_subscription",      details: "Plan Basic — Customer GHIJ...DEF6",     timestamp: "1 hour ago",     amount: "5 USDC"  },
-  { id: "4", type: "charge_succeeded",      details: "Customer GKLM...GHI9 — Monthly payment", timestamp: "2 hours ago",   amount: "25 USDC" },
-  { id: "5", type: "subscription_paused",   details: "Plan Pro — Customer GNOP...JKL2",       timestamp: "3 hours ago"                       },
-  { id: "6", type: "charge_succeeded",      details: "Customer GQRS...MNO5 — Monthly payment", timestamp: "5 hours ago",   amount: "10 USDC" },
-  { id: "7", type: "subscription_resumed",  details: "Plan Basic — Customer GTUV...PQR8",     timestamp: "6 hours ago"                       },
-  { id: "8", type: "subscription_cancelled",details: "Plan Basic — Customer GWXY...STU1",     timestamp: "1 day ago"                         },
-];
-const [items, setItems] = useState(null);
-  const [showLoading, setShowLoading] = useState(false);
-
-  useEffect(() => {
-    const t = setTimeout(() => setItems(MOCK_ITEMS), 1600);
-    return () => clearTimeout(t);
-  }, []);
-
   return (
     <div style={{ background: '#0a0a0a', minHeight: '100vh' }}>
       <LandingNavbar />
@@ -66,13 +46,6 @@ const [items, setItems] = useState(null);
           <p style={{ color: '#94a3b8' }}>Contact information goes here...</p>
         </section>
       </main>
-        <div style={{ maxWidth: "59.375rem" }}>
-        <RecentActivity
-          items={items}
-          onViewAll={() => alert("Navigate → /activity")}
-          maxVisible={8}
-        />
-      </div>
     </div>
   )
 }
