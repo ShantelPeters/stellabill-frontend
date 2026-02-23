@@ -17,9 +17,9 @@ export default function UsageThisPeriod({
 
   return (
     <div style={{
-      background: '#1a1a1a',
+      background: 'transparent',
       borderRadius: 12,
-      border: '1px solid #2a2a2a',
+      border: '1px solid #FFFFFF1A',
       padding: '1.5rem'
     }}>
       {/* Header */}
