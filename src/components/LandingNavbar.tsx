@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import WalletPill from './WalletPill'
-import WalletPill from './WalletPill'
+import { Link } from "react-router-dom";
 
 
 export default function LandingNavbar() {
@@ -196,7 +196,6 @@ export default function LandingNavbar() {
             Subscribe with USDC
           </button>
 
-<<<<<<< HEAD
           {isConnected ? (
             <WalletPill 
               address={address} 
@@ -238,45 +237,6 @@ export default function LandingNavbar() {
               Connect wallet
             </button>
           )}
-=======
-          <button
-            onClick={handleConnectWallet}
-            style={{
-              background: "linear-gradient(90deg, #22d3ee 0%, #14b8a6 100%)",
-              border: "none",
-              color: "#000000",
-              fontSize: "0.9375rem",
-              fontWeight: 600,
-              padding: "0.75rem 1.75rem",
-              borderRadius: "10px",
-              cursor: "pointer",
-              boxShadow:
-                "0 0 20px rgba(34, 211, 238, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)",
-              transition: "all 0.2s ease",
-              whiteSpace: "nowrap",
-              minHeight: "44px",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-1px)";
-              e.currentTarget.style.boxShadow =
-                "0 0 30px rgba(34, 211, 238, 0.6), 0 6px 16px rgba(0, 0, 0, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow =
-                "0 0 20px rgba(34, 211, 238, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3)";
-            }}
-            onFocus={(e) => {
-              e.currentTarget.style.outline = "2px solid #22d3ee";
-              e.currentTarget.style.outlineOffset = "4px";
-            }}
-            onBlur={(e) => {
-              e.currentTarget.style.outline = "none";
-            }}
-          >
-            Connect wallet
-          </button>
->>>>>>> 21e9867 (Implement feature comparison table (Free, Pro, Enterprise))
         </div>
 
         {/* Mobile Menu Button */}
@@ -399,7 +359,6 @@ export default function LandingNavbar() {
               Subscribe with USDC
             </button>
 
-<<<<<<< HEAD
             {isConnected ? (
               <WalletPill 
                 address={address} 
@@ -430,28 +389,6 @@ export default function LandingNavbar() {
                 Connect wallet
               </button>
             )}
-=======
-            <button
-              onClick={() => {
-                handleConnectWallet();
-                setIsMobileMenuOpen(false);
-              }}
-              style={{
-                background: "linear-gradient(90deg, #22d3ee 0%, #14b8a6 100%)",
-                border: "none",
-                color: "#ffffff",
-                fontSize: "1rem",
-                fontWeight: 600,
-                padding: "0.75rem",
-                borderRadius: "9999px",
-                cursor: "pointer",
-                boxShadow: "0 0 20px rgba(34, 211, 238, 0.4)",
-                minHeight: "44px",
-              }}
-            >
-              Connect wallet
-            </button>
->>>>>>> 21e9867 (Implement feature comparison table (Free, Pro, Enterprise))
           </div>
         </div>
       )}
